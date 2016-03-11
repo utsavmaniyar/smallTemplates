@@ -1,0 +1,39 @@
+.round{
+	width:160px;
+ 	height:160px;
+  	float:left;
+   	border-radius:160px; 
+   	border: 0px solid black; 
+  	position:absolute;
+   	left:0px; 
+   	top:0px;
+   	display:none;
+   	background-image: url(i3.jpg);
+	background-position:-190px -200px; 
+	background-repeat:no-repeat;
+}
+.box{
+	width:160px;
+ 	height:160px;
+  	float:left; 
+  	position:absolute;
+   	left:0px; 
+   	top:0px;
+   	display:none;
+   	background-image: url(i3.jpg);
+	background-position:-190px -200px; 
+	background-repeat:no-repeat;
+}
+.shape{
+	width:auto;
+	background-color:rgba(221,86,88,1.00);
+	border:1px solid rgba(241,82,20,1.00);
+	margin:20px;
+}
+.shape:hover{
+	
+	cursor:pointer;
+	border-radius:5px;
+	border:1px solid rgba(211,192,65,1.00);
+	background-color:rgba(203,229,53,1.00);
+}
