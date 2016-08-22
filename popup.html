@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+body{
+	text-align:center;
+	}
+	
+a{
+	text-align:center;
+	display:inline-block;
+	margin:  20px auto ;
+}
+.popup-youtube img{
+	height:auto;
+	width: 200px;
+	margin: 20px;
+	-webkit-box-shadow: 0px 0px 128px 0px rgba(128,126,128,1);
+-moz-box-shadow: 0px 0px 128px 0px rgba(128,126,128,1);
+box-shadow: 0px 0px 128px 0px rgba(128,126,128,1);
+}
+.play {
+       background: url('http://cdn1.iconfinder.com/data/icons/iconslandplayer/PNG/64x64/CircleBlue/Play1Pressed.png') center center no-repeat;
+    margin: -170px 10px 0 0;
+    height: 140px;
+    position: relative;
+    z-index: 10;
+    opacity: 0.5;
+}
+.play:hover{
+	opacity: 1;
+}
+.album a {
+	margin: 20px;}
+img{
+	height:auto;
+	width: 200px;
+	padding: 20px;
+	display: inline-block;
+	-webkit-box-shadow: 0px 0px 128px 0px rgba(128,126,128,1);
+-moz-box-shadow: 0px 0px 128px 0px rgba(128,126,128,1);
+box-shadow: 0px 0px 128px 0px rgba(128,126,128,1);	
+}
+</style>
+
+
+</head>
+
+<body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+<script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js">
+</script>
+
+
+<h1> ......Popup From Jquery......</h1>
+<h2> Videos</h2>
+
+<a class="popup-youtube" href="https://www.youtube.com/watch?v=5VAIA-DM6cY">
+                                
+                                <img src="https://i.ytimg.com/vi/5VAIA-DM6cY/hqdefault.jpg?custom=true&w=196&h=110&stc=true&jpg444=true&jpgq=90&sp=68&sigh=IkkvIHO_Q1ROVxZMvc1C5rTwisU" alt="InTouch HMI Design For Instrumentation Systems and Automation DP 3"> <div class="play"></div></a>    
+<a class="popup-youtube" href="https://www.youtube.com/watch?v=_5BhSyq9aAA">
+                              
+                               <img src="https://i.ytimg.com/vi/_5BhSyq9aAA/hqdefault.jpg?custom=true&w=168&h=94&stc=true&jpg444=true&jpgq=90&sp=68&sigh=ZrcjbaIwlfkDOPvQQkygExQ5DZc" alt="InTouch HMI Design For Instrumentation Systems and Automation DP 4"><div class="play"></div></a>
+                                 <a class="popup-youtube" href="https://www.youtube.com/watch?v=7_O8aBv6rqI">
+                              
+                                <img src="https://i.ytimg.com/vi/7_O8aBv6rqI/hqdefault.jpg?custom=true&amp;w=336&amp;h=188&amp;stc=true&amp;jpg444=true&amp;jpgq=90&amp;sp=68&amp;sigh=-DULZZbWT7Yeij9QpKWdRiuzH7I" alt="InTouch HMI Design For Instrumentation Systems and Automation" ><div class="play"></div></a>
+                                 <a class="popup-youtube" href="https://www.youtube.com/watch?v=Un0AnoUrO9c">
+                             
+                                <img src="https://i.ytimg.com/vi/Un0AnoUrO9c/hqdefault.jpg?custom=true&amp;w=336&amp;h=188&amp;stc=true&amp;jpg444=true&amp;jpgq=90&amp;sp=68&amp;sigh=PuZI5swyXAzWhsM6bKAklH5xR8I" alt="InTouch HMI Design For Instrumentation Systems and Automation DP 2"><div class="play"></div></a> 
+
+
+<h2>Photos</h2>
+<div class="album">
+    <a href="http://cdn.electric-cloud.com/wp-content/uploads/2015/04/end_to_end_automation.jpeg">
+        <img src="http://cdn.electric-cloud.com/wp-content/uploads/2015/04/end_to_end_automation.jpeg" alt="img1"/>
+    </a>
+    <a href="http://blogs.vmware.com/management/files/2016/07/Automation-Market.jpg">
+        <img src="http://blogs.vmware.com/management/files/2016/07/Automation-Market.jpg" alt="img2" />
+    </a>
+    <a href="https://www.stickyminds.com/sites/default/files/article/2015/automation.png">
+        <img src="https://www.stickyminds.com/sites/default/files/article/2015/automation.png" alt="img3" />
+    </a>
+</div>
+
+<script>
+    $(function() {
+    $('div.album').magnificPopup({delegate: 'a', type: 'image' });
+});
+</script>
+</body>
+<script>
+$(document).ready(function() {
+        $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+            disableOn: 700,
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+
+            fixedContentPos: false
+        });
+		$.extend(true, $.magnificPopup.defaults, {  
+    iframe: {
+        patterns: {
+           youtube: {
+              index: 'youtube.com/', 
+              id: 'v=', 
+              src: 'http://www.youtube.com/embed/%id%?autoplay=1' 
+          }
+        }
+    }
+});
+    });
+</script>
+
+
+</html>
