@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+body{
+	text-align: center;
+	background-image: url("http://hdfreewallpaper.net/wp-content/uploads/2015/12/happy-new-year-2016-colorful-city-HD-wallpaper-free-hd-for-desktop.jpg")}
+#countdown{
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+        position: relative;
+    top: 160px;
+    right: 250px
+}
+
+#countdown > div{
+    padding: 10px;
+    border-radius: 3px;
+    background: rgba(143,119,119,0.50);
+    display: inline-block;
+}
+
+#countdown div > span{
+    padding: 15px;
+    border-radius: 3px;
+    background: rgba(0,0,0,0.50);
+    display: inline-block;
+}
+
+.label{
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<h1>Happy New Year</h1>
+<div id="countdown">
+  <div>
+    <span class="days"></span>
+    <div class="label">Days</div>
+  </div>
+  <div>
+    <span class="hours"></span>
+    <div class="label">Hours</div>
+  </div>
+  <div>
+    <span class="minutes"></span>
+    <div class="label">Minutes</div>
+  </div>
+  <div>
+    <span class="seconds"></span>
+    <div class="label">Seconds</div>
+  </div>
+</div>
+
+<script>
+
+
+
+function getTimeRemaining(endtime) {
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+function initializeClock(id, EndCountDown) {
+  var clock = document.getElementById(id);
+  var daysSpan = clock.querySelector('.days');
+  var hoursSpan = clock.querySelector('.hours');
+  var minutesSpan = clock.querySelector('.minutes');
+  var secondsSpan = clock.querySelector('.seconds');
+
+  function updateClock() {
+    var t = getTimeRemaining(EndCountDown);
+
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+}
+
+var eventtime = 'December 31 2016 23:59:59 GMT-0500';
+initializeClock('countdown', eventtime);
+
+
+
+</script>
+
+
+
+</body>
+</html>
